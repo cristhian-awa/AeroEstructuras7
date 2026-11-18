@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Administrador | AeroEstructuras</title>
+    <link rel="stylesheet" href="css/login-admin.css">
+</head>
+<body>
+
+    <div class="login-contenedor">
+
+        <div class="login-logo">
+            <img src="img/logo-aeroestructuras.png" alt="AeroEstructuras">
+        </div>
+
+        <h1>Panel administrativo</h1>
+        <p class="subtitulo">Ingresa tus credenciales para continuar</p>
+
+        <form id="formularioLogin">
+
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" placeholder="Ingresa tu usuario" required>
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" placeholder="Ingresa tu contraseña" required>
+
+            <p id="mensajeError"></p>
+
+            <button type="submit">Iniciar sesión</button>
+
+        </form>
+
+        <a href="index.html" class="volver">Volver al sitio web</a>
+
+        <footer>© 2026 AeroEstructuras</footer>
+
+    </div>
+
+    <script src="js/login-admin.js"></script>
+</body>
+</html>

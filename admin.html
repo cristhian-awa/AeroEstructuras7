@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AeroEstructuras | Administración</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="admin-contenedor">
+
+    <aside class="menu-admin">
+
+        <div class="marca-admin">
+            <img src="img/logo-aeroestructuras.png" alt="AeroEstructuras">
+            <div>
+                <h2>AeroEstructuras</h2>
+                <span>Administración</span>
+            </div>
+        </div>
+
+        <div class="titulo-menu">MENÚ PRINCIPAL</div>
+
+        <nav class="navegacion-admin">
+            <a href="#" class="activo"><i class="fa-solid fa-house"></i> Inicio</a>
+            <a href="#pedidos"><i class="fa-solid fa-cart-shopping"></i> Pedidos</a>
+            <a href="#proyectos"><i class="fa-solid fa-building"></i> Proyectos</a>
+            <a href="#cotizaciones"><i class="fa-solid fa-file-invoice-dollar"></i> Cotizaciones</a>
+        </nav>
+
+        <div class="admin-inferior">
+            <div class="usuario-admin">
+                <div class="avatar-admin">A</div>
+                <div>
+                    <strong>Administrador</strong>
+                    <span>Panel de control</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="salir-admin">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Volver al sitio web
+            </a>
+        </div>
+
+    </aside>
+
+    <main class="contenido-admin">
+
+        <header class="encabezado-admin">
+            <div>
+                <span class="subtitulo-admin">PANEL DE CONTROL</span>
+                <h1>Resumen general</h1>
+                <p>Bienvenido al sistema de administración de AeroEstructuras.</p>
+            </div>
+
+            <div class="fecha-admin">
+                <i class="fa-regular fa-calendar"></i>
+                <span id="fechaActual"></span>
+            </div>
+        </header>
+
+        <!-- ESTADÍSTICAS -->
+
+        <section class="estadisticas-admin">
+
+            <article class="tarjeta-estadistica">
+                <div class="icono-estadistica naranja">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div>
+                    <span>Total de pedidos</span>
+                    <h2 id="totalPedidos">0</h2>
+                    <small>Pedidos registrados</small>
+                </div>
+            </article>
+
+            <article class="tarjeta-estadistica">
+                <div class="icono-estadistica azul">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <div>
+                    <span>Proyectos disponibles</span>
+                    <h2 id="totalProyectos">0</h2>
+                    <small>En el catálogo</small>
+                </div>
+            </article>
+
+            <article class="tarjeta-estadistica">
+                <div class="icono-estadistica verde">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+                <div>
+                    <span>Cotizaciones</span>
+                    <h2 id="totalCotizaciones">0</h2>
+                    <small>Solicitudes recibidas</small>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- ACCESOS RÁPIDOS -->
+
+        <section class="seccion-admin">
+
+            <div class="titulo-seccion-admin">
+                <div>
+                    <h2>Gestión del sistema</h2>
+                    <p>Accede rápidamente a cada módulo.</p>
+                </div>
+            </div>
+
+            <div class="modulos-admin">
+
+                <a href="#pedidos" class="modulo-admin">
+                    <div class="icono-modulo"><i class="fa-solid fa-box"></i></div>
+                    <h3>Pedidos</h3>
+                    <p>Consulta y administra los pedidos de los clientes.</p>
+                    <span>Ver pedidos <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="#proyectos" class="modulo-admin">
+                    <div class="icono-modulo"><i class="fa-solid fa-city"></i></div>
+                    <h3>Proyectos</h3>
+                    <p>Agrega, modifica y elimina proyectos del catálogo.</p>
+                    <span>Ver proyectos <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="#cotizaciones" class="modulo-admin">
+                    <div class="icono-modulo"><i class="fa-solid fa-file-signature"></i></div>
+                    <h3>Cotizaciones</h3>
+                    <p>Revisa las solicitudes enviadas por los clientes.</p>
+                    <span>Ver solicitudes <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- PEDIDOS -->
+
+        <section class="seccion-admin" id="pedidos">
+
+            <div class="titulo-seccion-admin">
+                <div>
+                    <h2>Últimos pedidos</h2>
+                    <p>Registro de compras de los clientes.</p>
+                </div>
+            </div>
+
+            <div class="tabla-pedidos-contenedor">
+                <table class="tabla-pedidos">
+                    <thead>
+                        <tr>
+                            <th>N.º Pedido</th>
+                            <th>Cliente</th>
+                            <th>Productos</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="pedidosTabla">
+                        <tr>
+                            <td colspan="6">Todavía no hay pedidos registrados.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <!-- GESTIÓN DE PROYECTOS -->
+
+        <section class="seccion-admin" id="proyectos">
+
+            <div class="titulo-seccion-admin">
+                <div>
+                    <h2>Gestión de proyectos</h2>
+                    <p>Administra los proyectos disponibles en la tienda.</p>
+                </div>
+            </div>
+
+            <form id="formularioProyecto" class="formulario-proyecto-admin">
+
+                <h3>Registrar nuevo proyecto</h3>
+
+                <input type="hidden" id="indiceProyecto">
+
+                <div class="campos-proyecto-admin">
+
+                    <div>
+                        <label for="nombreProyecto">Nombre del proyecto</label>
+                        <input type="text" id="nombreProyecto" required>
+                    </div>
+
+                    <div>
+                        <label for="categoriaProyecto">Categoría</label>
+                        <select id="categoriaProyecto" required>
+                            <option value="">Seleccionar categoría</option>
+                            <option value="Residencial">Residencial</option>
+                            <option value="Comercial">Comercial</option>
+                            <option value="Infraestructura">Infraestructura</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="imagenProyecto">Imagen del proyecto (URL o ruta)</label>
+                        <input type="text" id="imagenProyecto" required>
+                    </div>
+
+                    <div>
+                        <label for="precioProyecto">Precio (S/)</label>
+                        <input type="number" id="precioProyecto" min="0" step="0.01" required>
+                    </div>
+
+                    <div class="campo-descripcion-proyecto">
+                        <label for="descripcionProyecto">Descripción</label>
+                        <textarea id="descripcionProyecto" rows="4" required></textarea>
+                    </div>
+
+                </div>
+
+                <div class="acciones-formulario-proyecto">
+                    <button type="submit" id="guardarProyecto">Guardar proyecto</button>
+                    <button type="button" id="cancelarEdicionProyecto" hidden>Cancelar edición</button>
+                </div>
+
+            </form>
+
+            <div class="tabla-proyectos-contenedor">
+
+                <table class="tabla-proyectos-admin">
+
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Proyecto</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="proyectosTabla">
+                        <tr>
+                            <td colspan="5">Cargando proyectos...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- COTIZACIONES -->
+
+        <section class="seccion-admin" id="cotizaciones">
+
+            <div class="titulo-seccion-admin">
+                <div>
+                    <h2>Solicitudes de cotización</h2>
+                    <p>Consulta los mensajes enviados por los clientes.</p>
+                </div>
+            </div>
+
+            <div class="tabla-pedidos-contenedor">
+
+                <table class="tabla-pedidos">
+
+                    <thead>
+                        <tr>
+                            <th>N.º</th>
+                            <th>Cliente</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Tipo de consulta</th>
+                            <th>Mensaje</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cotizacionesTabla">
+                        <tr>
+                            <td colspan="7">Todavía no hay cotizaciones registradas.</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <footer class="footer-admin">
+            <p>© 2026 AeroEstructuras | Panel de administración</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="js/catalogo.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+</html>

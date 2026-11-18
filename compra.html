@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Finalizar compra | AeroEstructuras</title>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/compra.css">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="pagina-compra">
+
+        <div class="compra-contenedor">
+
+            <!-- FLECHA PARA REGRESAR -->
+            <a href="tienda.html" class="btn-volver">
+                <i class="fa-solid fa-arrow-left"></i>
+                Volver a la tienda
+            </a>
+
+            <!-- DATOS DEL COMPRADOR -->
+            <section class="formulario-compra">
+
+                <h1>Finalizar compra</h1>
+                <p>Completa tus datos para confirmar tu pedido.</p>
+
+                <form id="formulario-cliente">
+
+                    <h2>Datos personales</h2>
+
+                    <label for="nombre-cliente">Nombre completo</label>
+                    <input type="text" id="nombre-cliente" placeholder="Ingresa tu nombre" required>
+                    <small class="mensaje-error" id="error-nombre-cliente"></small>
+
+                    <label for="correo-cliente">Correo electrónico</label>
+                    <input type="email" id="correo-cliente" placeholder="ejemplo@gmail.com" required>
+                    <small class="mensaje-error" id="error-correo-cliente"></small>
+
+                    <label for="telefono-cliente">Teléfono</label>
+                    <input type="tel" id="telefono-cliente" placeholder="Ejemplo: 987654321" maxlength="9" required>
+                    <small class="mensaje-error" id="error-telefono-cliente"></small>
+
+                    <h2>Dirección de facturación</h2>
+
+                    <label for="departamento">Departamento</label>
+                    <select id="departamento" required>
+                        <option value="">Selecciona tu departamento</option>
+                    </select>
+                    <small class="mensaje-error" id="error-departamento"></small>
+
+                    <label for="provincia">Provincia</label>
+                    <select id="provincia" required disabled>
+                        <option value="">Primero selecciona un departamento</option>
+                    </select>
+                    <small class="mensaje-error" id="error-provincia"></small>
+
+                    <label for="distrito">Distrito</label>
+                    <select id="distrito" required disabled>
+                        <option value="">Primero selecciona una provincia</option>
+                    </select>
+                    <small class="mensaje-error" id="error-distrito"></small>
+
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" placeholder="Av., calle, número..." required>
+                    <small class="mensaje-error" id="error-direccion"></small>
+
+                    <label for="referencia">Referencia (opcional)</label>
+                    <input type="text" id="referencia" placeholder="Ejemplo: cerca del parque">
+
+                    <h2>Método de pago</h2>
+
+                    <label for="metodo-pago">Selecciona cómo deseas pagar</label>
+
+                    <select id="metodo-pago" required>
+                        <option value="">Seleccionar método de pago</option>
+                        <option value="Yape o Plin">Yape o Plin</option>
+                        <option value="Transferencia bancaria">Transferencia bancaria</option>
+                        <option value="Tarjeta">Tarjeta (simulación)</option>
+                    </select>
+
+                    <button type="submit" id="confirmar-compra">
+                        Confirmar pedido
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- RESUMEN DEL PEDIDO -->
+            <aside class="resumen-compra">
+
+                <h2>Resumen de tu pedido</h2>
+
+                <div id="lista-resumen">
+                    <p>Cargando productos...</p>
+                </div>
+
+                <div class="resumen-total">
+
+                    <span>Total a pagar:</span>
+
+                    <strong>
+                        S/ <span id="total-resumen">0.00</span>
+                    </strong>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-compra">
+        <p>© 2026 AeroEstructuras. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- EMAILJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- JAVASCRIPT DE COMPRA -->
+    <script src="js/compra.js"></script>
+
+</body>
+</html>

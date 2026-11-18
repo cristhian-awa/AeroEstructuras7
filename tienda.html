@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tienda de servicios | AeroEstructuras</title>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/tienda.css">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo-aeroestructuras.png" alt="AeroEstructuras">
+            </a>
+        </div>
+
+        <nav class="menu">
+
+            <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+
+            <a href="nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a>
+
+            <a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+
+            <a href="proyectos.html" data-es="Proyectos" data-en="Projects">Proyectos</a>
+
+            <a href="tienda.html" class="activo" data-es="Tienda" data-en="Store">Tienda</a>
+
+            <!-- SELECTOR DE IDIOMA -->
+            <div class="selector-idioma">
+
+                <button class="boton-idioma" id="botonIdioma" type="button">
+                    🌐
+                </button>
+
+                <div class="menu-idioma" id="menuIdioma">
+
+                    <button type="button" onclick="cambiarIdioma('es')">
+                        🇪🇸 Español
+                    </button>
+
+                    <button type="button" onclick="cambiarIdioma('en')">
+                        🇺🇸 English
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- BUSCADOR -->
+            <div class="contenedor-busqueda">
+
+                <button class="icono-menu" id="botonBuscar" type="button">
+                    🔍
+                </button>
+
+                <div class="buscador" id="buscador">
+
+                    <input
+                        type="text"
+                        id="campoBuscar"
+                        placeholder="Buscar..."
+                    >
+
+                    <button id="btnBuscar" type="button">
+                        Buscar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- ACCIONES DE TIENDA -->
+        <div class="acciones-tienda">
+
+            <button class="btn-carrito" id="abrir-carrito" type="button">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="contador-carrito">0</span>
+            </button>
+
+            <a href="contacto.html" class="btn-contacto">
+                <i class="fa-solid fa-envelope"></i>
+                <span data-es="Cotizar proyecto" data-en="Request a Quote">
+                    Cotizar proyecto
+                </span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- PRESENTACIÓN -->
+        <section class="tienda-hero">
+
+            <div>
+
+                <h1
+                    data-es="Tienda de proyectos"
+                    data-en="Project Store">
+                    Tienda de proyectos
+                </h1>
+
+                <p
+                    data-es="Explora nuestros proyectos de ingeniería y construcción, conoce sus características y agrégalos a tu carrito."
+                    data-en="Explore our engineering and construction projects, learn about their features, and add them to your cart.">
+                    Explora nuestros proyectos de ingeniería y construcción,
+                    conoce sus características y agrégalos a tu carrito.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATÁLOGO -->
+        <section class="catalogo-tienda">
+
+            <h2
+                data-es="Explora nuestros proyectos"
+                data-en="Explore our projects">
+                Explora nuestros proyectos
+            </h2>
+
+            <p
+                data-es="Conoce las soluciones que ofrecemos para desarrollar tus proyectos de construcción e ingeniería."
+                data-en="Discover the solutions we offer for your construction and engineering projects.">
+                Conoce las soluciones que ofrecemos para desarrollar
+                tus proyectos de construcción e ingeniería.
+            </p>
+
+            <div id="lista-productos" class="lista-productos">
+                <!-- Los proyectos aparecerán mediante JavaScript -->
+            </div>
+
+        </section>
+
+
+        <!-- VENTANA DEL CARRITO -->
+        <section class="carrito-contenedor" id="ventana-carrito">
+
+            <div class="carrito-contenido">
+
+                <div class="carrito-encabezado">
+
+                    <h2
+                        data-es="Mi carrito de compras"
+                        data-en="My Shopping Cart">
+                        Mi carrito de compras
+                    </h2>
+
+                    <button id="cerrar-carrito" type="button">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+                <div id="lista-carrito">
+                    <p
+                        data-es="Tu carrito está vacío."
+                        data-en="Your cart is empty.">
+                        Tu carrito está vacío.
+                    </p>
+                </div>
+
+                <div class="carrito-total">
+
+                    <h3>
+                        <span data-es="Total:" data-en="Total:">Total:</span>
+                        S/ <span id="total-carrito">0.00</span>
+                    </h3>
+
+                    <button
+                        id="finalizar-compra"
+                        type="button"
+                        data-es="Continuar con la compra"
+                        data-en="Continue to Checkout">
+                        Continuar con la compra
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMULARIO DE COMPRA -->
+        <section class="formulario-compra" id="formulario-compra">
+
+            <div class="formulario-contenido">
+
+                <div class="formulario-encabezado">
+
+                    <h2
+                        data-es="Datos del comprador"
+                        data-en="Customer Information">
+                        Datos del comprador
+                    </h2>
+
+                    <button id="cerrar-formulario" type="button">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+                <form id="formulario-cliente">
+
+                    <label
+                        for="nombre-cliente"
+                        data-es="Nombre completo"
+                        data-en="Full Name">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre-cliente"
+                        required
+                        placeholder="Ingresa tu nombre"
+                    >
+
+                    <label
+                        for="correo-cliente"
+                        data-es="Correo electrónico"
+                        data-en="Email Address">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo-cliente"
+                        required
+                        placeholder="ejemplo@correo.com"
+                    >
+
+                    <label
+                        for="telefono-cliente"
+                        data-es="Teléfono"
+                        data-en="Phone Number">
+                        Teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefono-cliente"
+                        required
+                        placeholder="Ingresa tu teléfono"
+                    >
+
+                    <button
+                        type="submit"
+                        id="confirmar-compra"
+                        data-es="Confirmar pedido"
+                        data-en="Confirm Order">
+                        Confirmar pedido
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-tienda">
+
+        <p
+            data-es="© 2026 AeroEstructuras. Todos los derechos reservados."
+            data-en="© 2026 AeroEstructuras. All rights reserved.">
+            © 2026 AeroEstructuras. Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/catalogo.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/tienda.js"></script>
+
+</body>
+
+</html>
